@@ -69,10 +69,10 @@ with st.sidebar:
     conf_threshold = st.slider("检测置信度", 0.0, 1.0, 0.5, 0.05)  # 置信度滑块
 
     st.divider()
-    st.caption("© 2025 王臭臭老师 实时姿态估计演示")
+    st.caption("© 2025 王臭臭 实时姿态估计演示")
 
 # 主页面
-st.title("YOLO11 人体姿态估计演示 (实时流版)")
+st.title("YOLO11 人体姿态估计演示")
 
 if model is not None:
     if source == "摄像头 (实时流)":
