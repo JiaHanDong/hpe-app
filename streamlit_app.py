@@ -5,6 +5,7 @@ from ultralytics import YOLO
 import numpy as np
 from PIL import Image
 import io
+import time  # 导入标准库 time
 
 # 设置页面配置
 st.set_page_config(
