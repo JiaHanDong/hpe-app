@@ -78,7 +78,7 @@ with st.sidebar:
     st.caption("© 2025 王婷婷 实时姿态估计演示")
 
 # 主页面
-st.title("青蓝·励新 人体姿态估计演示")
+st.title("人体姿态估计演示")
 
 if model is not None:
     if source == "摄像头 (实时流)":
