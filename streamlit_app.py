@@ -4,6 +4,10 @@ import tempfile
 from ultralytics import YOLO
 import numpy as np
 
+# 将 destroyAllWindows 替换为一个空函数
+original_destroy_all_windows = cv2.destroyAllWindows
+cv2.destroyAllWindows = lambda: None
+
 # 设置页面配置
 st.set_page_config(
     page_title="YOLO11 人体姿态估计",
