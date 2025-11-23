@@ -10,7 +10,7 @@ from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, RTCConfigurati
 
 # 设置页面配置
 st.set_page_config(
-    page_title="YOLO11 人体姿态估计 (实时流版)",
+    page_title="人体姿态估计演示",
     page_icon="👤",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -21,7 +21,7 @@ st.set_page_config(
 def load_model():
     try:
         model = YOLO('yolo11n-pose.pt')
-        st.success("✅ YOLO11 姿态模型已加载！")
+        st.success("✅ 姿态模型已加载！")
         return model
     except Exception as e:
         st.error(f"❌ 模型加载失败: {e}")
@@ -58,10 +58,12 @@ class PoseDetectionProcessor(VideoProcessorBase):  # 注意：使用新版 Video
 
 # --- UI 布局 ---
 with st.sidebar:
-    st.title('👤 YOLO11 人体姿态估计')
+    st.title('👤 人体姿态估计')
     st.markdown("""
-    实时处理本地摄像头画面，结果将实时返回显示。
+    本页面为青蓝·励新比赛《人体姿态估计》课程配套演示页面。
+    支持通过上传图片、视频以及使用本地摄像头作为输入，并对输入内容中的人体进行姿态估计。
     可通过滑块调整检测灵敏度。
+    作者：王婷婷
     """)
     st.divider()
 
@@ -69,10 +71,10 @@ with st.sidebar:
     conf_threshold = st.slider("检测置信度", 0.0, 1.0, 0.5, 0.05)  # 置信度滑块
 
     st.divider()
-    st.caption("© 2025 王臭臭 实时姿态估计演示")
+    st.caption("© 2025 王婷婷 实时姿态估计演示")
 
 # 主页面
-st.title("YOLO11 人体姿态估计演示")
+st.title("青蓝·励新 人体姿态估计演示")
 
 if model is not None:
     if source == "摄像头 (实时流)":
