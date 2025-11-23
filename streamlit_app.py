@@ -205,7 +205,7 @@ if model is not None:
                 frame_placeholder.image(st.session_state.processed_frame, channels="RGB", use_column_width=True)
             
             # 添加一个小延迟，降低CPU占用
-            st.sleep(0.01)
+            time.sleep(0.01)
 
 else:
     st.error("由于模型加载失败，应用无法正常运行。请检查云端环境的网络连接和配置。")
