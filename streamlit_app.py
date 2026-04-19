@@ -59,9 +59,7 @@ class PoseDetectionProcessor(VideoProcessorBase):  # 注意：使用新版 Video
 # --- UI 布局 ---
 with st.sidebar:
     st.title('👤 人体姿态估计')
-    st.markdown("""
-    本页面为青蓝·励新比赛《人体姿态估计》课程配套演示页面。
-    """)
+
     st.markdown("""
     支持通过上传图片、视频以及使用本地摄像头作为输入，并对输入内容中的人体进行姿态估计。
     可通过滑块调整检测灵敏度。
